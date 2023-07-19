@@ -1,0 +1,1 @@
+from app.views.main.routes import main_blueprint

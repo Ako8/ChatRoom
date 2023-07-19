@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+
+{% block body %}
+<div class="row justify-content-center h-100">
+    <div class="col-md-8 col-xl-6 chat ">
+        <div class="card">
+            <div class="card-body msg_card_body">
+                <form method="post" class="buttons">
+                    <h3 style="color: whitesmoke">Enter The Chat Lobby</h3>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-info rounded-left" disabled>Name:</button>
+                            <input
+                                    type="text"
+                                    placeholder="Pick a name!"
+                                    name="name"
+                                    value="{{name}}"
+                            />
+                        </div>
+                    </div>
+                    <div class="join input-group">
+                        <div class="input-group-prepend">
+                            <input type="text" placeholder="Lobby Code" name="code" value="{{code}}"/>
+                            <button class="btn btn-info rounded-right" type="submit" value="pressed" name="join">Join a
+                                Lobby
+                            </button>
+                        </div>
+
+                    </div>
+                    <button type="submit" name="create" value="pressed" class="create-btn btn btn-info">Create a Lobby
+                    </button>
+                    {% if error %}
+                    <ul>
+                        <li>{{error}}</li>
+                    </ul>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
